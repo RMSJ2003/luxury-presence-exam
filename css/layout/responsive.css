@@ -1,0 +1,329 @@
+:root {
+  --font-secondary: 'Source Sans 3', 'Source Sans Pro', sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+.page-layout>* {
+  min-width: 0;
+}
+
+.page-layout {
+  --hero-header: 40vh;
+  --hero-gap: 80vh;
+  grid-template-rows:
+    [full-start header-start] var(--hero-header) [header-end] var(--hero-gap) [title-start] min-content [title-end about-start] min-content [about-end reminder-start] min-content [reminder-end search-start] min-content [search-end sponsor-start] min-content [sponsor-end];
+}
+
+.title {
+  text-align: center;
+  padding: 0 var(--side-gap);
+}
+
+.title__heading-primary--main {
+  font-size: clamp(1.5rem, 2.6vw, 2.5rem);
+}
+
+.title__heading-primary--sub {
+  font-size: clamp(3rem, 6vw, 5rem);
+}
+
+.title__heading-primary--sub>span {
+  font-size: clamp(4rem, 8vw, 7rem);
+}
+
+.about__name {
+  font-size: clamp(2.6rem, 5vw, 4.5rem);
+  text-align: center;
+}
+
+.about__title,
+.about__phone {
+  font-size: clamp(1.6rem, 2.6vw, 2rem);
+  text-align: center;
+}
+
+.about__img {
+  width: min(35rem, 100%);
+  height: auto;
+}
+
+.reminder__title {
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  text-align: center;
+}
+
+.reminder__img {
+  max-width: 100%;
+  height: auto;
+}
+
+.search {
+  height: auto;
+  min-height: 60rem;
+}
+
+.search__title {
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  text-align: center;
+}
+
+.search__title>span {
+  font-size: clamp(2.8rem, 4.8vw, 3.7rem);
+}
+
+.search__form-title {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+}
+
+.search__form-title>span {
+  font-size: clamp(2.8rem, 4.8vw, 3.8rem);
+}
+
+.sponsors {
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+.sponsors__img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ---------- Header + navigation ---------- */
+.header__logo {
+  max-width: 50vw;
+  object-fit: contain;
+}
+
+.nav__background {
+  min-width: 24rem;
+  overflow-y: auto;
+}
+
+.nav__list-item--link {
+  display: inline-block;
+  padding: .4rem 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-secondary--light);
+  outline-offset: 3px;
+}
+
+/* ==========================================================
+   LAPTOP  ≤ 1200px
+   ========================================================== */
+@media (max-width: 1200px) {
+  :root {
+    --side-gap: 4.8rem;
+  }
+}
+
+/* ==========================================================
+   TABLET LANDSCAPE  ≤ 1024px
+   ========================================================== */
+@media (max-width: 1024px) {
+  :root {
+    --side-gap: 4rem;
+  }
+
+  .page-layout {
+    --hero-header: 36vh;
+    --hero-gap: 65vh;
+  }
+
+  .nav__background {
+    width: 35vw;
+  }
+
+  .reminder {
+    gap: 3rem;
+  }
+
+  .search {
+    padding: 6rem 0;
+  }
+
+  .search__form {
+    width: 90%;
+    grid-template-rows: none;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.4rem;
+  }
+
+  .search__form>* {
+    grid-row: auto;
+    grid-column: span 1;
+  }
+
+  .search__form-title,
+  .search__btn {
+    grid-column: 1 / -1;
+  }
+
+  .search__input-group--location,
+  .search__input-group--type,
+  .search__input-group--sort,
+  .search__input-group--min-price,
+  .search__input-group--max-price {
+    grid-column: span 2;
+  }
+}
+
+/* ==========================================================
+   TABLET PORTRAIT  ≤ 768px
+   ========================================================== */
+@media (max-width: 768px) {
+  :root {
+    --side-gap: 3rem;
+  }
+
+  .page-layout {
+    --hero-header: 32vh;
+    --hero-gap: 55vh;
+  }
+
+  .nav__background {
+    width: 60vw;
+  }
+
+  .about {
+    padding: calc(var(--side-gap) * 1.5) var(--side-gap);
+    gap: 3rem;
+  }
+
+  /* Reminder: 2-column zigzag becomes one column, in HTML order */
+  .reminder {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    gap: 2.4rem;
+    padding-bottom: 8rem !important;
+  }
+
+  .reminder>* {
+    grid-row: auto;
+    grid-column: auto;
+    justify-self: center;
+  }
+
+  .reminder__img {
+    width: 100%;
+    max-width: 56rem;
+  }
+
+  .reminder__textbox,
+  .reminder__text-box {
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    text-align: center;
+  }
+
+  /* Search: 2 columns, Location full width */
+  .search__form {
+    width: 92%;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .search__input-group--type,
+  .search__input-group--sort,
+  .search__input-group--min-price,
+  .search__input-group--max-price {
+    grid-column: span 1;
+  }
+
+  /* Touch-friendly controls (16px text stops iOS zooming into inputs) */
+  .search__dropdown,
+  .search__input {
+    height: 4.4rem;
+    font-size: 1.6rem;
+  }
+
+  .search__btn,
+  .title__cta {
+    min-height: 4.8rem;
+  }
+}
+
+/* ==========================================================
+   PHONE  ≤ 480px
+   ========================================================== */
+@media (max-width: 480px) {
+  :root {
+    --side-gap: 2rem;
+  }
+
+  .page-layout {
+    --hero-header: 28vh;
+    --hero-gap: 50vh;
+  }
+
+  /* Nav drawer covers the screen; the X sits top-right */
+  .nav__background {
+    width: 100vw;
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .nav__close-btn {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    padding: 1rem;
+    font-size: 2.4rem;
+  }
+
+  .nav__list-item--link {
+    font-size: 2rem;
+  }
+
+  .about {
+    padding: 4rem 2rem;
+  }
+
+  .reminder {
+    padding-bottom: 6rem !important;
+  }
+
+  .reminder__paragraph {
+    width: 100%;
+    margin-top: 1.6rem;
+  }
+
+  .search__form {
+    grid-template-columns: 1fr;
+  }
+
+  .search__form>* {
+    grid-column: 1 / -1;
+  }
+
+  .sponsors {
+    padding: 4rem 2rem;
+    gap: 2rem;
+  }
+}
+
+/* ==========================================================
+   SHORT LANDSCAPE SCREENS (phones turned sideways)
+   ========================================================== */
+@media (max-height: 520px) and (orientation: landscape) {
+  :root {
+    --side-gap: 2rem;
+  }
+
+  .page-layout {
+    --hero-header: 45vh;
+    --hero-gap: 45vh;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: .01ms !important;
+  }
+}

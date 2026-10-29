@@ -1,0 +1,7 @@
+.page-layout {
+  display: grid;
+  grid-template-rows: [full-start header-start] 40vh [header-end] 80vh [title-start] min-content [title-end about-start] min-content [about-end reminder-start] min-content [reminder-end search-start] min-content [search-end sponsor-start] min-content [sponsor-end];
+  grid-template-columns: 100%;
+
+  position: relative;
+}

@@ -1,0 +1,284 @@
+/* ==========================================================
+   gallery-footer.css  —  gallery, services, contact, footer, cookie banner
+   Link it AFTER sponsor.css and BEFORE responsive.css.
+   Row positions come from the named lines in responsive.css
+   (gallery-start, services-start, contact-start, footer-start).
+   ========================================================== */
+
+.gallery,
+.services,
+.contact,
+.footer {
+  padding: calc(var(--side-gap) * 1.5) var(--side-gap);
+}
+
+.gallery {
+  grid-row: gallery-start / gallery-end;
+  background-color: var(--color-primary);
+}
+
+.services {
+  grid-row: services-start / services-end;
+  background-color: var(--color-primary--dark);
+}
+
+.contact {
+  grid-row: contact-start / contact-end;
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+}
+
+.footer {
+  grid-row: footer-start / footer-end;
+  padding-block: 3rem;
+  background-color: rgb(var(--color-black--rgb));
+  color: var(--color-secondary--light-3);
+  font-family: var(--font-secondary);
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+/* Shared heading */
+.section-title {
+  margin-bottom: 4rem;
+  font-family: var(--font-primary);
+  font-size: clamp(2.4rem, 4vw, 3.2rem);
+  font-weight: 400;
+  letter-spacing: .2rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* ---------- Gallery ---------- */
+.gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+.gallery__item {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background-color: var(--color-secondary--light-3);
+}
+
+.gallery__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .4s ease;
+}
+
+.gallery__item:hover .gallery__img {
+  transform: scale(1.05);
+}
+
+.gallery__caption {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 2.4rem 1.6rem 1.2rem;
+  background-image: linear-gradient(to bottom, transparent, rgba(var(--color-black--rgb), .7));
+  color: var(--color-primary);
+  font-family: var(--font-secondary);
+  font-size: 1.5rem;
+}
+
+/* ---------- Services ---------- */
+.services__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+  gap: 4rem;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+.services__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6rem;
+  text-align: center;
+}
+
+.services__img {
+  width: 100%;
+  aspect-ratio: 2 / 1;
+  object-fit: cover;
+  background-color: var(--color-secondary--light-3);
+}
+
+.services__heading {
+  font-family: var(--font-secondary);
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: var(--color-secondary);
+}
+
+.services__text {
+  max-width: 42rem;
+  font-family: var(--font-secondary);
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: var(--color-secondary--light);
+}
+
+/* ---------- Contact ---------- */
+.contact__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  max-width: 120rem;
+  margin: 0 auto;
+  font-family: var(--font-secondary);
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.contact__label {
+  font-size: 1.5rem;
+  color: var(--color-secondary--light-3);
+}
+
+.contact__field {
+  width: 100%;
+  height: 4.4rem;
+  padding: 0 1.2rem;
+  border: .1rem solid var(--color-secondary--light-2);
+  border-radius: .5rem;
+  background: transparent;
+  color: var(--color-primary);
+  font: inherit;
+  font-size: 1.6rem;
+}
+
+textarea.contact__field {
+  height: 12rem;
+  padding-top: 1.2rem;
+  resize: vertical;
+}
+
+.contact__btn {
+  height: 4.8rem;
+  border: none;
+  border-radius: 50rem;
+  background-color: var(--color-secondary--light-3);
+  color: var(--color-secondary);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.contact__status {
+  min-height: 2rem;
+  font-size: 1.5rem;
+}
+
+.contact__info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+
+.contact__heading {
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+
+.contact__link,
+.contact__link:link,
+.contact__link:visited {
+  color: var(--color-primary);
+}
+
+.contact__socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  list-style: none;
+}
+
+/* ---------- Cookie banner ---------- */
+.cookie {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  left: 2rem;
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  max-width: 60rem;
+  margin-inline: auto;
+  padding: 1.6rem 2rem;
+  background-color: var(--color-secondary);
+  box-shadow: 0 .4rem 1.2rem rgba(var(--color-black--rgb), .4);
+  color: var(--color-primary);
+  font-family: var(--font-secondary);
+  font-size: 1.4rem;
+  line-height: 1.5;
+}
+
+.cookie[hidden] {
+  display: none;
+}
+
+.cookie__btn {
+  flex-shrink: 0;
+  height: 4rem;
+  padding: 0 2.4rem;
+  border: none;
+  border-radius: 50rem;
+  background-color: var(--color-secondary--light-3);
+  color: var(--color-secondary);
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+  .gallery__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact__inner {
+    gap: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact__inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery__grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .section-title {
+    margin-bottom: 2.4rem;
+  }
+
+  .cookie {
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

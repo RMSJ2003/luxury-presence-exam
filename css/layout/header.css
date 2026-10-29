@@ -1,0 +1,92 @@
+.header {
+  grid-row: header-start / header-end;
+
+  background-color: var(--color-primary);
+  height: 100%;
+  width: 100%;
+  padding: 0 var(--side-gap) 0 var(--side-gap);
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 60% 80%, 50% 100%, 40% 80%, 0 80%);
+
+  display: flex;
+  flex-direction: row;
+
+  position: relative;
+}
+
+.header__nav-btn {
+  margin-top: var(--side-gap);
+  height: 6rem;
+  padding: 1.2rem 0;
+  background: none;
+  border: 0;
+  cursor: pointer;
+
+  z-index: 200;
+}
+
+.header__nav-icon,
+.header__nav-icon::before,
+.header__nav-icon::after {
+  z-index: 200;
+
+  display: block;
+  width: 3rem;
+  height: 2px;
+  background-color: var(--color-secondary);
+}
+
+.header__nav-icon {
+  position: relative;
+}
+
+.header__nav-icon::before,
+.header__nav-icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  transition: top .2s;
+}
+
+.header__nav-icon::before {
+  top: -.8rem;
+}
+
+.header__nav-icon::after {
+  top: .8rem;
+}
+
+.header__nav-btn:hover .header__nav-icon::before {
+  top: -1rem;
+}
+
+.header__nav-btn:hover .header__nav-icon::after {
+  top: 1rem;
+}
+
+.header__nav-btn.active .header__nav-icon::before {
+  transform: rotate(135deg);
+  top: 0;
+}
+
+.header__nav-btn.active .header__nav-icon::after {
+  transform: rotate(-135deg);
+  top: 0;
+}
+
+.header__nav-btn.active .header__nav-icon {
+  background-color: transparent;
+
+}
+
+
+
+
+
+.header__logo {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  height: 25vh;
+}

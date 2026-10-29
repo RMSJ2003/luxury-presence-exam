@@ -1,0 +1,40 @@
+.about {
+  grid-row: about-start / about-end;
+
+  margin-top: var(--side-gap);
+
+  background-color: var(--color-secondary);
+  padding: calc(var(--side-gap)*2);
+  text-transform: uppercase;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--side-gap);
+}
+
+.about__name {
+  font-family: var(--font-primary);
+  color: var(--color-primary);
+  font-weight: 100;
+  font-size: 4.5rem;
+  letter-spacing: .3rem;
+  word-spacing: .5rem;
+}
+
+.about__img {
+  border-radius: 50rem;
+  width: 35rem;
+}
+
+.about__title,
+.about__phone {
+  font-family: var(--font-secondary);
+  color: var(--color-primary);
+  font-weight: 100;
+  font-size: 2rem;
+  letter-spacing: .1rem;
+  word-spacing: .3rem;
+
+
+}

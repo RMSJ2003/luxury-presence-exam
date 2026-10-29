@@ -1,0 +1,28 @@
+:root {
+  /* Fonts */
+  --font-primary: 'Cinzel', Georgia, serif;
+  --font-secondary: 'Source Sans Pro', sans-serif;
+
+  /* Colors */
+  --color-primary: #fff;
+  --color-primary--rgb: 0, 0, 0;
+  --color-primary--dark: rgb(239, 239, 239);
+  --color-secondary--dark-rgb: 5, 5, 5;
+
+  --color-secondary: rgb(35, 35, 35);
+  --color-secondary--light: rgb(71, 71, 71);
+  --color-secondary--light-2: rgb(136, 136, 136);
+  --color-secondary--light-3: rgb(197, 197, 197);
+
+
+
+
+  --color-primary--rgb: 85, 197, 242;
+  --color-secondary--rgb: 35, 35, 35;
+  --color-black--rgb: 0, 0, 0;
+
+
+
+  /* Spacing */
+  --side-gap: 6rem;
+}

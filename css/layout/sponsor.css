@@ -1,0 +1,12 @@
+.sponsors {
+  grid-row: sponsor-start / sponsor-end;
+
+  background-color: var(--color-primary);
+  padding: calc(var(--side-gap) * 1.5);
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.sponsors__img {}

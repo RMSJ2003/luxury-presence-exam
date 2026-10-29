@@ -1,0 +1,155 @@
+.search {
+  grid-row: search-start / search-end;
+
+  background-image:
+    linear-gradient(to bottom,
+      rgba(var(--color-secondary--rgb), 0.5) 80%,
+      rgba(var(--color-secondary--dark-rgb), 1) 20%),
+    url("../../img/house-design.webp");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  height: 60rem;
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--side-gap);
+}
+
+.search__form {
+  background-color: var(--color-primary);
+  box-shadow: 0px 4px 12px rgba(var(--color-primary--rgb), 0.5);
+  width: 80%;
+  padding: var(--side-gap);
+
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(6, 1fr);
+  gap: 3rem
+}
+
+.search__form>*:not(:first-child) {
+  font-family: var(--font-secondary);
+
+}
+
+.search__title {
+  color: var(--color-primary);
+  font-size: 3rem;
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  word-spacing: .4rem;
+}
+
+.search__title>span {
+  font-size: 3.7rem;
+
+}
+
+.search__form-title {
+  grid-row: 1 / 2;
+  grid-column: 1 / -1;
+
+  font-size: 3.2rem;
+  font-weight: 100;
+  text-transform: uppercase;
+  color: brown;
+}
+
+.search__form-title>span {
+  font-size: 3.8rem;
+}
+
+
+
+.search__input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.search__input-group--location {
+  grid-row: 2 / 3;
+  grid-column: 1 / 3;
+}
+
+.search__input-group--type {
+  grid-row: 2 / 3;
+  grid-column: 3/ 5;
+}
+
+.search__input-group--sort {
+  grid-row: 2 / 3;
+  grid-column: 5 / -1;
+}
+
+.search__input-group--bedrooms {}
+
+.search__input-group--min-price {}
+
+.search__input-group--max-price {}
+
+.search__label {
+  font-size: 1.6rem;
+  color: var(--color-secondary);
+}
+
+.search__label--location {}
+
+.search__label--type {}
+
+.search__label--sort {}
+
+.search__label--bedrooms {}
+
+.search__label--min-price {}
+
+.search__label--max-price {}
+
+.search__dropdown {}
+
+.search__dropdown--location {}
+
+.search__dropdown--type {}
+
+.search__dropdown--sort {}
+
+.search__dropdown--bedrooms {}
+
+.search__dropdown {}
+
+.search__input {
+  border: none !important;
+  border-radius: 0 !important;
+  border-bottom: .1rem solid var(--color-secondary--light-2) !important;
+}
+
+.search__dropdown,
+.search__input {
+  border: .1rem solid var(--color-secondary--light-2);
+  border-radius: .5rem;
+  height: 3.5rem;
+}
+
+.search__dropdown,
+.search__input .search__input--min-price {}
+
+.search__input--max-price {}
+
+.search__btn {
+  border: none;
+  background-color: var(--color-secondary--light-3);
+  border-radius: 50rem;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: .1rem;
+  word-spacing: .1rem;
+  color: var(--color-secondary);
+  cursor: pointer;
+}
